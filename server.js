@@ -1,9 +1,9 @@
-// server.js
-const http = require('http')
-const PORT = process.env.PORT || 9000
-http
-  .createServer((req, res) => {
-    res.writeHead(200, { "Content-Type": "text/html" });
+const http = require("http");
+const fs = require("fs");
+const port = process.env.port || 8080;
+
+const server = http.createServer(function (req, res) {
+  res.writeHead(200, { "Content-Type": "text/html" });
   fs.readFile("index.html", function (error, data) {
     if (error) {
       res.writeHead(404);
@@ -13,5 +13,12 @@ http
     }
     res.end();
   });
- })
-  .listen(PORT, () => console.log('Listening on', PORT))
+});
+
+server.listen(port, function (error) {
+  if (error) {
+    console.log("An error has occured", error);
+  } else {
+    console.log("Server is running on port " + port);
+  }
+});
