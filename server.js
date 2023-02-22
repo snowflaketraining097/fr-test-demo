@@ -15,10 +15,4 @@ const server = http.createServer(function (req, res) {
   });
 });
 
-server.listen(port, function (error) {
-  if (error) {
-    console.log("An error has occured", error);
-  } else {
-    console.log("Server is running on port " + port);
-  }
-});
+.listen(PORT, () => console.log('Listening on', PORT))
