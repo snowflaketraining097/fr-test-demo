@@ -4,5 +4,5 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/frdemo-378609/fr-test-demo:$SHORT_SHA']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'fr-test-demo', '--image=gcr.io/frdemo-378609/fr-test-demo:ef087bb:$SHORT_SHA', '--region=us-central1']
+  args: ['run', 'deploy', 'fr-test-demo', '--image=gcr.io/frdemo-378609/fr-test-demo:ef087bb:$SHORT_SHA', '--region=us-central1']
 
